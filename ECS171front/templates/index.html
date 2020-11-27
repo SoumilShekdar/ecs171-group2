@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Covid-19 Analysis</title>
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="shortcut icon" href="/static/images/lstm.ico">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      <center>Covid-19 Case Severity</center>
+    </h1>
+
+    {% block content %}
+
+
+    <form method=post>
+      {{ form.sex.label }}
+      {{ form.sex }}
+      <br>
+      {{ form.days_to_med.label }}
+      {{ form.days_to_med }}
+      <br>
+      {{ form.patient_type.label }}
+      {{ form.patient_type }}
+      <br>
+      {{ form.intubed.label }}
+      {{ form.intubed }}
+      <br>
+      {{ form.pneumonia.label }}
+      {{ form.pneumonia }}
+      <br>
+      {{ form.pregnancy.label }}
+      {{ form.pregnancy }}
+      <br>
+      {{ form.diabetes.label }}
+      {{ form.diabetes }}
+      <br>
+      {{ form.copd.label }}
+      {{ form.copd }}
+      <br>
+      {{ form.asthma.label }}
+      {{ form.asthma }}
+      <br>
+      {{ form.inmsupr.label }}
+      {{ form.inmsupr }}
+      <br>
+      {{ form.hypertension.label }}
+      {{ form.hypertension }}
+      <br>
+      {{ form.other_disease.label }}
+      {{ form.other_disease }}
+      <br>
+      {{ form.cardiovascular.label }}
+      {{ form.cardiovascular }}
+      <br>
+      {{ form.obesity.label }}
+      {{ form.obesity }}
+      <br>
+      {{ form.renal_chronic.label }}
+      {{ form.renal_chronic }}
+      <br>
+      {{ form.tobacco.label }}
+      {{ form.tobacco }}
+      <br>
+      {{ form.submit }}
+    </form>
+    {% endblock %}
+
+  </div>
+</body>
+
+</html>
