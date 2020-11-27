@@ -18,6 +18,7 @@
 
 
     <form method=post>
+      <h1>General Information:</h1>
       {{ form.sex.label }}
       {{ form.sex }}
       <br>
@@ -30,6 +31,7 @@
       {{ form.intubed.label }}
       {{ form.intubed }}
       <br>
+      <h1>Patient Health Information:</h1>
       {{ form.pneumonia.label }}
       {{ form.pneumonia }}
       <br>
@@ -66,10 +68,11 @@
       {{ form.tobacco.label }}
       {{ form.tobacco }}
       <br>
+      <br>
       {{ form.submit }}
       <br>
-      <br>
-      <p> Probability of Death is: </p>{{output}}
+      <h1>Probability of Death:</h1>
+      {{output}}
 
     </form>
     {% endblock %}
