@@ -7,21 +7,8 @@ import numpy as np
 from wtforms import (Form, TextField, validators, SelectField, SubmitField, BooleanField, IntegerField)
 app = Flask(__name__)
 
-# @app.route("/")
-# def hello():
-#     return "<h1>Not Much Going On Here</h1>"
 
 class ReusableForm(Form):
-    """User entry form for entering specifics for generation"""
-    # Starting seed
-    # seed = TextField("Enter a seed string or 'random':", validators=[
-    #                  validators.InputRequired()])
-    # # Diversity of predictions
-    # diversity = DecimalField('Enter diversity:', default=0.8,
-    #                          validators=[validators.InputRequired(),
-    #                                      validators.NumberRange(min=0.5, max=5.0,
-    #                                      message='Diversity must be between 0.5 and 5.')])
-
     # sex
     sex = SelectField('Choose Sex', choices=['Male', 'Female'])
     # patient_type
@@ -112,9 +99,6 @@ def home():
         print(predictions[0][0]) # probability of death?
         output = predictions[0][0]
         
-
-
-
     return render_template('index.html', form=form, output=output)
 
 
