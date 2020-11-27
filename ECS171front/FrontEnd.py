@@ -53,8 +53,6 @@ class ReusableForm(Form):
     # tobacco
     tobacco = SelectField('Tobacco use?', choices=['Yes', 'No'])
 
-    test = BooleanField("test")
-
     # days_to_medical_help
     days_to_med = IntegerField('Enter days to receive medical help:',
                          default=0, validators=[validators.InputRequired()])
@@ -112,10 +110,12 @@ def home():
         predictions = model.predict(np.array([data_to_predict,]))
         print(predictions)
         print(predictions[0][0]) # probability of death?
+        output = predictions[0][0]
+        
 
 
 
-    return render_template('index.html', form=form)
+    return render_template('index.html', form=form, output=output)
 
 
 app.run(host='0.0.0.0', port=50000, debug=False)
