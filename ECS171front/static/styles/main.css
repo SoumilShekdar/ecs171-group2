@@ -1,0 +1,7 @@
+body {
+    background-image: url("/static/images/cool-background.png");
+    color: white;
+    background-color: #000000;
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
