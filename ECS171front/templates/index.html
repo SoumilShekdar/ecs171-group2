@@ -2,120 +2,130 @@
 <html>
 
 <head>
-  <title>Covid-19 Analysis</title>
-  <link rel="shortcut icon" href="/static/images/lstm.ico">
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+
+  <!-- <link rel="shortcut icon" href="/static/images/lstm.ico"> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
-<body style="color:white">
+<body>
   <div class="container">
-    <h1>
-      <center>Covid-19 Case Severity</center>
-    </h1>
 
     {% block content %}
+
     <form method=post>
-      <div class="row">
-        <div class="col">
-          <h3>General Information:</h3>
-          <div class="row">
-            <div class="col">
-              {{ form.sex.label }}
-              {{ form.sex }}
-            </div>
-            <div class="col">
-              {{ form.intubed.label }}
-              {{ form.intubed }}
-            </div>
+      <div id="main_body">
+          <div id="header">
+              <p>Covid-19 Case Severity</p>
           </div>
-          <div class="row">
-            <div class="col">
-              {{ form.age.label }}
-              {{ form.age }}
-            </div>
+
+          <div id="block">
+              <div id="info_side">
+                <div id="info_side_container">
+
+                  <h1 id="general_info">General Information:</h1>
+                  <div>
+                      {{ form.sex.label }}
+                      {{ form.sex }}
+                  </div>
+                  <div>
+                      {{ form.intubed.label }}
+                      {{ form.intubed }}
+                  </div>
+                  <div>
+                      {{ form.age.label }}
+                      {{ form.age }}
+                  </div>
+                  <div>
+                      {{ form.days_to_med.label }}
+                      {{ form.days_to_med }}
+                  </div>
+                  <div>
+                      {{ form.patient_type.label }}
+                      {{ form.patient_type }}
+                  </div>
+                  <h1 id="health_conditions">Health Conditions:</h1>
+                  <div>
+                      {{ form.pneumonia.label }}
+                      {{ form.pneumonia }}
+                  </div>
+                  <div>
+                      {{ form.pregnancy.label }}
+                      {{ form.pregnancy }}
+                  </div>
+                  <div>
+                      {{ form.diabetes.label }}
+                      {{ form.diabetes }}
+                  </div>
+                  <div>
+                      {{ form.copd.label }}
+                      {{ form.copd }}
+                  </div>
+                  <div>
+                      {{ form.asthma.label }}
+                      {{ form.asthma }}
+                  </div>
+                  <div>
+                      {{ form.inmsupr.label }}
+                      {{ form.inmsupr }}
+                  </div>
+                  <div>
+                      {{ form.hypertension.label }}
+                      {{ form.hypertension }}
+                  </div>
+                  <div>
+                      {{ form.other_disease.label }}
+                      {{ form.other_disease }}
+                  </div>
+                  <div>
+                      {{ form.cardiovascular.label }}
+                      {{ form.cardiovascular }}
+                  </div>
+                  <div>
+                      {{ form.obesity.label }}
+                      {{ form.obesity }}
+                  </div>
+                  <div>
+                      {{ form.renal_chronic.label }}
+                      {{ form.renal_chronic }}
+                  </div>
+                  <div>
+                      {{ form.tobacco.label }}
+                      {{ form.tobacco }}
+                  </div>
+                      {{ form.submit }}
+                </div>
+
+              </div>
+
+              <div id="results_side">
+                <div id="results">
+                  <div id="icu_result">
+                    <h3>Probability of ICU:</h3>
+                    {{prediction_icu}}
+                  </div>
+                  <div id="death_result">
+                      <h1>Probability of Lethality:</h1>
+                      {{prediction_lethal}}
+                  </div>
+                </div>
+                <div id="extra_info">
+                  <p id="extra_info_header">Are these results accurate?</p>
+                </div>
+              </div> 
+
+
+
+
+
           </div>
-          <div class="row">
-            <div class="col">
-              {{ form.days_to_med.label }}
-              {{ form.days_to_med }}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              {{ form.patient_type.label }}
-              {{ form.patient_type }}
-            </div>
-          </div>
-          <h3>Health Conditions:</h3>
-          <div class="row">
-            <div class="col">
-              {{ form.pneumonia.label }}
-              {{ form.pneumonia }}
-            </div>
-            <div class="col">
-              {{ form.pregnancy.label }}
-              {{ form.pregnancy }}
-            </div>
-            <div class="col">
-              {{ form.diabetes.label }}
-              {{ form.diabetes }}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              {{ form.copd.label }}
-              {{ form.copd }}
-            </div>
-            <div class="col">
-              {{ form.asthma.label }}
-              {{ form.asthma }}
-            </div>
-            <div class="col">
-              {{ form.inmsupr.label }}
-              {{ form.inmsupr }}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              {{ form.hypertension.label }}
-              {{ form.hypertension }}
-            </div>
-            <div class="col">
-              {{ form.other_disease.label }}
-              {{ form.other_disease }}
-            </div>
-            <div class="col">
-              {{ form.cardiovascular.label }}
-              {{ form.cardiovascular }}
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              {{ form.obesity.label }}
-              {{ form.obesity }}
-            </div>
-            <div class="col">
-              {{ form.renal_chronic.label }}
-              {{ form.renal_chronic }}
-            </div>
-            <div class="col">
-              {{ form.tobacco.label }}
-              {{ form.tobacco }}
-            </div>
-          </div>
-          {{ form.submit }}
-        </div>
-        <div class="col">
-          <h3>Probability of ICU:</h3>
-          {{prediction_icu}}
-          <h3>Probability of Lethality:</h3>
-          {{prediction_lethal}}
-        </div>
       </div>
+
+
     </form>
     {% endblock %}
+
   </div>
 </body>
 

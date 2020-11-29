@@ -1,0 +1,172 @@
+/* Reset CSS Code */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+    font-size: auto;
+}
+
+/* Actual CSS for page*/
+#main_body{
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    border: 8px solid #ff3366;
+}
+
+#header{
+    display: flex;
+    height: 80px;
+    width: auto;
+    /* background-color: blue; */
+    justify-content: flex-start;
+    align-items: center;
+    font-size: auto;
+    font-size: 30px;
+}
+
+#header p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding-left: 20px;
+    color: #2a81cc;
+}
+
+#block{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    padding-bottom: 20px;
+    height: auto;
+}
+
+#info_side{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* background-color: red; */
+    align-items: center;
+    border-right: 5px solid #ff3366;
+}
+
+#info_side_container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+    width: 80%;
+    padding: 10px 10px 5px 10px;
+    border: 5px solid #eedaf2;
+    color:#2a81cc;
+}
+
+#info_side_container select, #info_side_container input{
+    width: 100px;
+    border-radius: 50px;
+    background: none;
+    background-color: #dee0f5;
+    color:#338f97;
+}
+
+#info_side_container div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 0px 5px 0px;
+}
+
+#submit{
+    display: flex;
+    align-self: center;
+    padding: 10px 10px 10px 10px;
+}
+
+#results_side{
+    display: flex;
+    flex-direction: column;
+    width: 50%
+}
+
+#results{
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+#death_result, #icu_result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-size: 25px;
+
+}
+
+#death_result{
+    color: #9dc974;
+}
+
+#icu_result{
+    color: #ffa626;
+    border-right: 3px solid #ffd6e0;
+}
+
+#extra_info{
+    display: flex;
+    height: 50%;
+    border-top: 3px solid #ffd6e0;
+    color: #2a81cc;
+}
+
+#extra_info_header{
+    padding: 15px 0px 0px 15px;
+}
+
+#health_conditions, #general_info{
+    color: #9dc974;
+    font-size: 20px;
+    padding-bottom: 10px;
+}

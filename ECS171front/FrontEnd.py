@@ -120,6 +120,7 @@ def home():
         print(predictions_lethal[0][0]) # probability of icu?
         #output = predictions_icu[0][0]
         
+        
     return render_template('index.html', form=form, prediction_icu=icu_prob, prediction_lethal=lethal_prob)
 
 
