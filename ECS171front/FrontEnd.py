@@ -92,9 +92,10 @@ def home():
         elif patient_type == 'Inpatient':
             patient_type_id = 0
         data_to_predict.append(patient_type_id)
+        data_to_predict.append(age_scaler.transform(np.array(int(request.form['age'])).reshape(1, -1))[0])
+        data_to_predict.append(days_to_medical_help_scaler.transform(np.array(int(request.form['days_to_med'])).reshape(1, -1))[0])
         data_to_predict.append(convert_to_id(request.form['intubed']))
         data_to_predict.append(convert_to_id(request.form['pneumonia']))
-        data_to_predict.append(age_scaler.transform(np.array(int(request.form['age'])).reshape(1, -1))[0])
         data_to_predict.append(convert_to_id(request.form['pregnancy']))
         data_to_predict.append(convert_to_id(request.form['diabetes']))
         data_to_predict.append(convert_to_id(request.form['copd']))
@@ -106,7 +107,7 @@ def home():
         data_to_predict.append(convert_to_id(request.form['obesity']))
         data_to_predict.append(convert_to_id(request.form['renal_chronic']))
         data_to_predict.append(convert_to_id(request.form['tobacco']))
-        data_to_predict.append(days_to_medical_help_scaler.transform(np.array(int(request.form['days_to_med'])).reshape(1, -1))[0])
+        
         print(data_to_predict)
         print("ICU Prediction:")
         predictions_icu = icu_model.predict(np.array([data_to_predict,]).astype('float32'))

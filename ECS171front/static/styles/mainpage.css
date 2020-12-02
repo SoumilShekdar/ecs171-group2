@@ -54,7 +54,7 @@ table {
     /* height: 100%; */
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    border: 8px solid #ff3366;
+    /*border: 8px solid #ff3366;*/
 }
 
 #header{
@@ -70,7 +70,7 @@ table {
 
 #header p{
     font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-weight: bolder;
     padding-left: 20px;
     color: #2a81cc;
 }
@@ -89,7 +89,7 @@ table {
     width: 50%;
     /* background-color: red; */
     align-items: center;
-    border-right: 5px solid #ff3366;
+    /*border-right: 5px solid #ff3366;*/
 }
 
 #info_side_container{
@@ -98,7 +98,7 @@ table {
     /* background-color: green; */
     width: 80%;
     padding: 10px 10px 5px 10px;
-    border: 5px solid #eedaf2;
+    /*border: 5px solid #eedaf2;*/
     color:#2a81cc;
 }
 
@@ -106,8 +106,8 @@ table {
     width: 100px;
     border-radius: 50px;
     background: none;
-    background-color: #dee0f5;
-    color:#338f97;
+    background-color: #b1ccff;
+    color:#2a81cc;
 }
 
 #info_side_container div{
@@ -146,27 +146,31 @@ table {
 }
 
 #death_result{
-    color: #9dc974;
+    color: #e01212;
 }
 
 #icu_result{
     color: #ffa626;
-    border-right: 3px solid #ffd6e0;
+    /*border-right: 3px solid #ffd6e0;*/
 }
 
 #extra_info{
     display: flex;
     height: 50%;
-    border-top: 3px solid #ffd6e0;
+    /*border-top: 3px solid #ffd6e0;*/
     color: #2a81cc;
 }
 
 #extra_info_header{
     padding: 15px 0px 0px 15px;
+    font-weight: bold;
+    color: #9dc974;
+    font-size: 20px;
 }
 
 #health_conditions, #general_info{
     color: #9dc974;
     font-size: 20px;
     padding-bottom: 10px;
+    font-weight: bold;
 }
